@@ -1,18 +1,20 @@
-# Using SmartDNS with MacOS to Circumnavigate Geo-blocking
+# Circumnavigate Geo-blocking without VPN faff.
 
 Having moved outside of the UK I wanted to be able to access UK services without the faff of VPNs.
 
-SmartDNS is a service that provides a geo based DNS. You can use the DNS server provided for system wide settings or use a more granular approach using '''resolver'''.
+SmartDNS is a service that provides a geo based DNS. Create an account at [SmartDNS](https://www.smartdnsproxy.com/), and follow their setup instructions.
 
-## Create resolver for each domain
+You can use the DNS nameservers provided for system wide settings or use a more granular approach using ```resolver```.
 
-Place these files in '''/etc/resolver/'''.
+## Granular control for MacOS
 
-Add new domains by naming file according to domain, ie '''co.uk'''.
+Create a file for each domain that you want to resolve through the SmartDNS nameserver and place in ```/etc/resolver/```.
 
-Place following inside the file and save;
+Add new domains by naming file according to domain, ie ```co.uk```.
 
-domain '''TLD'''
-search '''TLD'''
+```bash
+domain co.uk
+search co.uk
 nameserver 35.178.60.174
 nameserver 46.166.189.68
+```
