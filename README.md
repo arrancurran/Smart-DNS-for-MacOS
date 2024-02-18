@@ -12,9 +12,20 @@ Create a file for each domain that you want to resolve through the SmartDNS name
 
 Add new domains by naming file according to domain, ie ```co.uk```.
 
-```bash
+```
 domain co.uk
 search co.uk
 nameserver 35.178.60.174
 nameserver 46.166.189.68
 ```
+
+Reboot system or ```$ sudo killall -HUP mDNSResponder``` then ```$ scutil --dns``` to check all is well.
+
+```
+resolver #
+  domain   : co.uk
+  search domain[0] : co.uk
+  nameserver[0] : 35.178.60.174
+  nameserver[1] : 46.166.189.68
+```
+
